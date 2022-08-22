@@ -1,10 +1,35 @@
 # Compose Zoom
 
+[![](https://jitpack.io/v/SmartToolFactory/Compose-Zoom.svg)](https://jitpack.io/#SmartToolFactory/Compose-Zoom)
+
 Zoom Modifiers, zoomable image and layouts with limit pan bounds, fling and moving back to
 valid bounds and callbacks that return current transformation or visible image section
 
 https://user-images.githubusercontent.com/35650605/185785993-58aee8fb-8f27-4664-9ebe-5cde04b5a04e.mp4
 
+## Gradle Setup
+
+To get a Git project into your build:
+
+* Step 1. Add the JitPack repository to your build file Add it in your root build.gradle at the end
+  of repositories:
+
+```
+allprojects {
+  repositories {
+      ...
+      maven { url 'https://jitpack.io' }
+  }
+}
+```
+
+* Step 2. Add the dependency
+
+```
+dependencies {
+    implementation 'com.github.SmartToolFactory:Compose-Zoom:<version>'
+}
+```
 
 ## Modifier.zoom()
 
