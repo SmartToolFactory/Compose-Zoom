@@ -3,6 +3,8 @@
 Zoom Modifiers, zoomable image and layouts with limit pan bounds, fling and moving back to
 valid bounds and callbacks that return current transformation or visible image section
 
+https://user-images.githubusercontent.com/35650605/185785993-58aee8fb-8f27-4664-9ebe-5cde04b5a04e.mp4
+
 
 ## Modifier.zoom()
 
