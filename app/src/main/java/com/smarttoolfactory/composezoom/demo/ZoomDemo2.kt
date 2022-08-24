@@ -19,14 +19,13 @@ import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.smarttoolfactory.composezoom.widget.ContentScaleSelectionMenu
 import com.smarttoolfactory.composezoom.R
-import com.smarttoolfactory.composezoom.widget.TitleMedium
 import com.smarttoolfactory.composezoom.widget.CheckBoxWithTitle
+import com.smarttoolfactory.composezoom.widget.ContentScaleSelectionMenu
+import com.smarttoolfactory.composezoom.widget.TitleMedium
 import com.smarttoolfactory.zoom.ZoomableImage
 import com.smarttoolfactory.zoom.rememberZoomState
 import com.smarttoolfactory.zoom.zoom
-
 import kotlin.math.roundToInt
 
 /**
@@ -121,9 +120,6 @@ private fun SheetContent(
 
     Spacer(modifier = Modifier.height(20.dp))
     TitleMedium(text = "Change Properties")
-    ContentScaleSelectionMenu(contentScale = contentScale) {
-        onContentScaleChange(contentScale)
-    }
 
     CheckBoxWithTitle(
         label = "Limit Pan(Rotation should be disabled)",
@@ -148,6 +144,11 @@ private fun SheetContent(
         onStateChange = onClipTransformToContentScale
     )
     CheckBoxWithTitle(label = "consume", state = consume, onStateChange = onConsumeChange)
+
+    ContentScaleSelectionMenu(contentScale = contentScale) {
+        onContentScaleChange(contentScale)
+    }
+
 }
 
 @Composable
@@ -170,6 +171,7 @@ private fun MainContent(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
+            .background(Color(0xffECEFF1))
             .padding(bottom = 60.dp)
     ) {
         ZoomableImageDemo(

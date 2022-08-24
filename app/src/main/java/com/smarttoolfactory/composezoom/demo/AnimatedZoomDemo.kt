@@ -17,7 +17,9 @@ fun AnimatedZoomDemo() {
 
     println("⛺️ AnimatedZoomDemo")
 
-    Column(modifier = Modifier.fillMaxSize().background(Color(0xff607D8B))) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .background(Color(0xff607D8B))) {
         AnimatedZoomLayout(
             modifier = Modifier.fillMaxSize(),
             enabled = { zoom, pan, rotation ->
