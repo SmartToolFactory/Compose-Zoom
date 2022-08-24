@@ -8,7 +8,6 @@ import androidx.compose.ui.unit.IntSize
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
-
 /**
  *  * State of the enhanced. Allows to change zoom, pan,  translate,
  *  or get current state by
@@ -136,26 +135,26 @@ open class ZoomState(
     }
 
     internal suspend fun animatePanXto(panX: Float) {
-        if (pannable) {
+        if (pannable && pan.x != panX) {
             animatablePanX.animateTo(panX)
         }
     }
 
     internal suspend fun animatePanYto(panY: Float) {
-        if (pannable) {
+        if (pannable && pan.y != panY) {
             animatablePanY.animateTo(panY)
         }
     }
 
     internal suspend fun animateZoomTo(zoom: Float) {
-        if (zoomable) {
+        if (zoomable && this.zoom != zoom) {
             val newZoom = zoom.coerceIn(zoomMin, zoomMax)
             animatableZoom.animateTo(newZoom)
         }
     }
 
     internal suspend fun animateRotationTo(rotation: Float) {
-        if (rotatable) {
+        if (rotatable && this.rotation != rotation) {
             animatableRotation.animateTo(rotation)
         }
     }
