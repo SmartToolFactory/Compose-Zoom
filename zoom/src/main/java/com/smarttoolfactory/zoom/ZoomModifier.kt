@@ -42,8 +42,6 @@ fun Modifier.zoom(
 ) = composed(
     factory = {
         val coroutineScope = rememberCoroutineScope()
-
-        Modifier.pointerMotionEvents()
         // Current Zoom level
         var zoomLevel by remember { mutableStateOf(ZoomLevel.Min) }
 
